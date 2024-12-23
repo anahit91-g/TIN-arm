@@ -43,7 +43,7 @@
         .navigation button {
             margin-left: 10px;
             padding: 5px 10px;
-            font-size: 14px;
+            font-size: 12px;
             cursor: pointer;
         }
 
@@ -58,6 +58,18 @@
             color: #007BFF;
             text-decoration: none;
         }
+
+        .answer-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .small-button {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -65,13 +77,13 @@
     <div class="container">
         <div id="question" class="blue-border">
             <p>Q1: Are you a citizen of the Republic of Armenia?</p>
-            <button onclick="showNext('citizen-yes')">Yes</button>
-            <button onclick="showNext('citizen-no')">No</button>
+            <button class="answer-button" onclick="showNext('citizen-yes')">Yes</button>
+            <button class="answer-button" onclick="showNext('citizen-no')">No</button>
         </div>
 
         <div class="navigation">
-            <button onclick="goBack()">Back</button>
-            <button onclick="restart()">Back to the Start</button>
+            <button class="small-button" onclick="goBack()">Back</button>
+            <button class="small-button" onclick="restart()">Back to the Start</button>
         </div>
     </div>
 
@@ -79,8 +91,8 @@
         const questions = {
             'citizen-yes': `
                 <p>Q1: Do you have an Identification Card with Electronic Chip (eID) issued before February 15, 2023 and its PIN/PUK codes?</p>
-                <button onclick="showNext('eid-yes')">Yes</button>
-                <button onclick="showNext('eid-no')">No</button>
+                <button class="answer-button" onclick="showNext('eid-yes')">Yes</button>
+                <button class="answer-button" onclick="showNext('eid-no')">No</button>
             `,
             'citizen-no': '<p>Guide in progress</p>',
             'eid-yes': `
@@ -93,8 +105,8 @@
                     <li>Identification Card with Electronic Chip (eID) issued by February 15, 2023, but forgot PIN/PUK codes.</li>
                     <li>Identification Card without Electronic Chip.</li>
                 </ul>
-                <button onclick="showNext('eid-options-yes')">Yes</button>
-                <button onclick="showNext('eid-options-no')">No</button>
+                <button class="answer-button" onclick="showNext('eid-options-yes')">Yes</button>
+                <button class="answer-button" onclick="showNext('eid-options-no')">No</button>
             `,
             'eid-options-yes': `
                 <p>Step 1: Visit any of the three mobile service providers (Team Telecom, Ucom, Viva MTS) and obtain Mobile ID with your Passport/ID and social security number.</p>
